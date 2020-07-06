@@ -1,0 +1,56 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"></Insets>
+    </padding>
+    <columnConstraints>
+        <ColumnConstraints minWidth="200" prefWidth="200" maxWidth="200" halignment="RIGHT"></ColumnConstraints>
+        <ColumnConstraints minWidth="500" prefWidth="500" maxWidth="Infinity" halignment="CENTER"
+                           hgrow="ALWAYS"></ColumnConstraints>
+        <ColumnConstraints minWidth="200" prefWidth="200" maxWidth="Infinity" halignment="LEFT"></ColumnConstraints>
+    </columnConstraints>
+    <TextArea fx:id="outgoingMessageTextArea" GridPane.columnIndex="1" GridPane.rowIndex="2" prefRowCount="20"
+              prefWidth="350" maxWidth="350" promptText="Type Message Here.."/>
+    <Label text="Online Persons" GridPane.columnIndex="0" GridPane.rowIndex="0"
+           style="-fx-font-weight: bold;-fx-padding : 5 25 5 25;-fx-background-color : #CCFF99;"/>
+    <ListView GridPane.columnIndex="0" GridPane.rowIndex="1" fx:id="listViewClient" maxWidth="130" prefWidth="130"
+              GridPane.rowSpan="2"/>
+
+    <TextArea fx:id="incomingMessageTextArea" GridPane.columnIndex="1" GridPane.rowIndex="1" prefRowCount="45"
+              style="-fx-display-caret: false"/>
+    <Button fx:id="sendButton" text="Send" prefHeight="60" prefWidth="60"
+            defaultButton="true" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="RIGHT"
+            onAction="#handleSendButtonAction">
+        <GridPane.margin>
+            <Insets left="5" right="5" top="5" bottom="5"></Insets>
+        </GridPane.margin>
+    </Button>
+    <Button fx:id="attachButton" text="Attach" prefHeight="60" prefWidth="60"
+            defaultButton="true" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="LEFT">
+        <!--                onAction="#handleSubmitButtonAction">-->
+        <GridPane.margin>
+            <Insets left="5" right="5" top="5" bottom="5"></Insets>
+        </GridPane.margin>
+    </Button>
+
+    <Label text="Server Files" GridPane.columnIndex="2" GridPane.rowIndex="0"
+           style="-fx-font-weight: bold;-fx-padding : 5 25 5 25;-fx-background-color : #CCFF99;"/>
+    <ListView GridPane.columnIndex="2" GridPane.rowIndex="1" fx:id="listViewFiles" maxWidth="130" prefWidth="130"
+              GridPane.rowSpan="2"/>
+
+
+    <!--    <Button fx:id="submitButton" text="Submit" prefHeight="40" prefWidth="100"-->
+    <!--            defaultButton="true" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2" GridPane.rowSpan="1" GridPane.halignment="CENTER"-->
+    <!--            onAction="#handleSubmitButtonAction">-->
+    <!--        <GridPane.margin>-->
+    <!--            <Insets left="0" right="0" top="20" bottom="20"></Insets>-->
+    <!--        </GridPane.margin>-->
+    <!--    </Button>-->
+</GridPane>
